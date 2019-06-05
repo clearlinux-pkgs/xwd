@@ -4,7 +4,7 @@
 #
 Name     : xwd
 Version  : 1.0.7
-Release  : 5
+Release  : 6
 URL      : https://www.x.org/releases/individual/app/xwd-1.0.7.tar.gz
 Source0  : https://www.x.org/releases/individual/app/xwd-1.0.7.tar.gz
 Summary  : No detailed summary available
