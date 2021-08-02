@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xCFDF148828C642A7 (alanc@freedesktop.org)
 #
 Name     : xwd
-Version  : 1.0.7
-Release  : 7
-URL      : https://www.x.org/releases/individual/app/xwd-1.0.7.tar.gz
-Source0  : https://www.x.org/releases/individual/app/xwd-1.0.7.tar.gz
-Source1  : https://www.x.org/releases/individual/app/xwd-1.0.7.tar.gz.sig
+Version  : 1.0.8
+Release  : 8
+URL      : https://www.x.org/releases/individual/app/xwd-1.0.8.tar.gz
+Source0  : https://www.x.org/releases/individual/app/xwd-1.0.8.tar.gz
+Source1  : https://www.x.org/releases/individual/app/xwd-1.0.8.tar.gz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT-Opengroup
@@ -23,6 +23,7 @@ BuildRequires : pkgconfig(xproto)
 
 %description
 xwd - dump an image of an X window
+----------------------------------
 All questions regarding this software should be directed at the
 Xorg mailing list:
 
@@ -52,23 +53,23 @@ man components for the xwd package.
 
 
 %prep
-%setup -q -n xwd-1.0.7
-cd %{_builddir}/xwd-1.0.7
+%setup -q -n xwd-1.0.8
+cd %{_builddir}/xwd-1.0.8
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1604356966
+export SOURCE_DATE_EPOCH=1627928608
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -80,10 +81,10 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1604356966
+export SOURCE_DATE_EPOCH=1627928608
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xwd
-cp %{_builddir}/xwd-1.0.7/COPYING %{buildroot}/usr/share/package-licenses/xwd/6b0e3fce4ba4e2a4fba4301ed4e356885de100f7
+cp %{_builddir}/xwd-1.0.8/COPYING %{buildroot}/usr/share/package-licenses/xwd/6b0e3fce4ba4e2a4fba4301ed4e356885de100f7
 %make_install
 
 %files
